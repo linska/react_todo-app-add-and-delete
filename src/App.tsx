@@ -66,13 +66,13 @@ export const App: React.FC = () => {
       const todo: Todo = await addTodo(title);
 
       setTodoList(prev => [...prev, todo]);
+      setTempTodo(null);
     } catch {
       setErrorMessage('Unable to add a todo');
+      setTempTodo(null);
 
       throw new Error('Failed to add todo');
     }
-
-    setTempTodo(null);
   }
 
   async function handleDeleteTodo(id: Todo['id']) {
