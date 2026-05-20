@@ -1,20 +1,14 @@
 import React from 'react';
 import cn from 'classnames';
 
-type Props = {
-  value: boolean;
-  onToggle: (value: boolean) => void;
-};
-
-export const ToggleAllButton: React.FC<Props> = ({ value, onToggle }) => {
+export const ToggleAllButton: React.FC = () => {
   return (
     <button
       type="button"
       className={cn('todoapp__toggle-all', {
-        active: value,
+        active: false,
       })}
       data-cy="ToggleAllButton"
-      onClick={() => onToggle(!value)}
     />
   );
 };
